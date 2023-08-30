@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Realtime Data Sender</title>
+  </head>
+  <body>
+    <h1>Firebase Realtime Data Sender</h1>
+    <p>Status: <span id="status">Menunggu...</span></p>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+      // Konfigurasi Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCOof95awYRY2PrDP8H8B027jJXkR32tXY",
+        authDomain: "x-manibus.firebaseapp.com",
+        projectId: "x-manibus",
+        storageBucket: "x-manibus.appspot.com",
+        messagingSenderId: "693248919281",
+        appId: "1:693248919281:web:3617e69253c59497604b50",
+        measurementId: "G-DXXHGH5364",
+        databaseURL: "https://x-manibus-default-rtdb.firebaseio.com",
+      };
+
+      // Inisialisasi Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const database = app.database();
+
+      // Element status
+      const statusElement = document.getElementById("status");
+
+      // Fungsi untuk mengirim data ke Firebase
+      function sendData() {
+        const emgValue = Math.random() * 100; // Nilai random untuk 'emg'
+        const servoValue = Math.random() * 180; // Nilai random untuk 'servo'
+
+        const data = {
+          ecg: emgValue,
+          servo: servoValue,
+        };
+
+        database.ref("data").set(data, (error) => {
+          if (error) {
+            statusElement.textContent = "Error: Gagal mengirim data";
+            console.error("Error sending data:", error);
+          } else {
+            statusElement.textContent = "Status: Data berhasil terkirim";
+            console.log("Data sent successfully:", data);
+          }
+        });
+      }
+
+      // Mengirim data setiap detik
+      setInterval(sendData, 1000);
+    </script>
+  </body>
+</html>
