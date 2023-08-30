@@ -4,6 +4,7 @@ import "chartkick/chart.js";
 import "./App.css";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import "firebase/compat/database"; // Import the database module
 
 // Initialize Firebase with your configuration
 const firebaseConfig = {
@@ -14,17 +15,10 @@ const firebaseConfig = {
   messagingSenderId: "693248919281",
   appId: "1:693248919281:web:3617e69253c59497604b50",
   measurementId: "G-DXXHGH5364",
+  databaseURL: "https://x-manibus-default-rtdb.firebaseio.com",
 };
 
 firebase.initializeApp(firebaseConfig);
-
-function generateRandomECGValue() {
-  return Math.random() * 200 - 100;
-}
-
-function generateRandomEMGValue() {
-  return Math.random() * 200 - 100;
-}
 
 function App() {
   const [ecgData, setECGData] = useState({});
@@ -39,32 +33,28 @@ function App() {
         setUser(authUser);
         setUserProfilePic(authUser.photoURL);
 
-        const initialData = {};
-        for (let i = 0; i < 10; i++) {
-          const timestamp = new Date().toISOString();
-          initialData[timestamp] = generateRandomECGValue();
-        }
-        setECGData(initialData);
-
-        const initialDataEmg = {};
-        for (let i = 0; i < 10; i++) {
-          const timestamp = new Date().toISOString();
-          initialDataEmg[timestamp] = generateRandomEMGValue();
-        }
-        setEMGData(initialDataEmg);
-
         const updateDataInterval = setInterval(() => {
           const timestamp = new Date().toISOString();
 
-          setEMGData((prevData) => ({
-            ...prevData,
-            [timestamp]: generateRandomEMGValue(),
-          }));
+          // Get the latest values from the database for ECG and EMG
+          firebase
+            .database()
+            .ref("data")
+            .once("value")
+            .then((snapshot) => {
+              const data = snapshot.val();
+              if (data) {
+                setECGData((prevData) => ({
+                  ...prevData,
+                  [timestamp]: data.ecg,
+                }));
 
-          setECGData((prevData) => ({
-            ...prevData,
-            [timestamp]: generateRandomECGValue(),
-          }));
+                setEMGData((prevData) => ({
+                  ...prevData,
+                  [timestamp]: data.servo,
+                }));
+              }
+            });
         }, 1000);
 
         return () => {
@@ -103,9 +93,9 @@ function App() {
   };
 
   const chartTitleStyle = {
-    fontFamily: "Times New Roman", // Change this to the desired font family
-    fontSize: "18px", // Change this to the desired font size
-    fontWeight: "bold", // Change this to the desired font weight
+    fontFamily: "Times New Roman",
+    fontSize: "18px",
+    fontWeight: "bold",
   };
 
   return (
@@ -143,8 +133,15 @@ function App() {
               />
             </div>
             <div className="chart">
-              {/* Add your second chart here */}
-              <LineChart data={emgData} ytitle="Servo" legend={false} />
+              <LineChart
+                data={emgData}
+                library={{
+                  colors: ["#0b0", "#666"],
+                  title: { style: chartTitleStyle },
+                }}
+                ytitle="Servo"
+                legend={false}
+              />
             </div>
           </div>
         </main>
