@@ -53,7 +53,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-For any questions or inquiries, please contact [Your Name](https://github.com/your-username).
+For any questions or inquiries, please contact [Aisy Al Fawwaz](https://github.com/your-username).
 ```
-
-Please note that you should replace placeholders like `your-username` with your actual GitHub username, and consider adding a proper `LICENSE` file as well as an `app-preview.png` image showcasing your application.
