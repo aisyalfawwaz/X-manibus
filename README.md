@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# X-Manibus Realtime Monitoring
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+X-Manibus Realtime Monitoring is a web application that displays real-time data from sensors in the form of interactive line charts. The application is built using React and integrates Firebase for authentication and data storage.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Real-time monitoring of sensor data with interactive line charts.
+- Support for multiple data streams (ECG and EMG in this case).
+- Dark and light mode for user interface customization.
+- User authentication using Google login.
+- Simple and intuitive UI design.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run the X-Manibus Realtime Monitoring application on your local machine, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone this repository to your local machine:
 
-### `npm test`
+   ```bash
+   git clone https://github.com/your-username/x-manibus-realtime-monitoring.git
+   cd x-manibus-realtime-monitoring
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install the required dependencies:
 
-### `npm run build`
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Create a Firebase project and obtain the configuration details (apiKey, authDomain, etc.). Replace the placeholders in `src/App.js` with your Firebase configuration.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+5. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to see the application in action.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React: A JavaScript library for building user interfaces.
+- Firebase: A platform for building web and mobile applications.
+- React Chartkick: A React wrapper for Chartkick, a charting library based on Chart.js.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Acknowledgements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project was developed by [Your Name](https://github.com/your-username). It serves as an example of real-time data visualization using React and Firebase. Feel free to modify and extend it for your own projects.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+For any questions or inquiries, please contact [Your Name](https://github.com/your-username).
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please note that you should replace placeholders like `your-username` with your actual GitHub username, and consider adding a proper `LICENSE` file as well as an `app-preview.png` image showcasing your application.
