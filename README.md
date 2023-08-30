@@ -45,7 +45,7 @@ To run the X-Manibus Realtime Monitoring application on your local machine, foll
 
 ## Acknowledgements
 
-This project was developed by [Your Name](https://github.com/your-username). It serves as an example of real-time data visualization using React and Firebase. Feel free to modify and extend it for your own projects.
+This project was developed by [Aisy Al Fawwaz](https://github.com/aisyalfawwaz). It serves as an example of real-time data visualization using React and Firebase. Feel free to modify and extend it for your own projects.
 
 ## License
 
@@ -53,4 +53,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-For any questions or inquiries, please contact [Aisy Al Fawwaz](https://github.com/your-username).
+For any questions or inquiries, please contact [Aisy Al Fawwaz](https://github.com/aisyalfawwaz).
