@@ -1,107 +1,43 @@
-/* App.css */
-/* App.css */
+/* index.css atau App.css */
+@import "~font-awesome/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   text-align: center;
-  transition: background-color 0.3s ease;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
   background-color: #282c34;
-  padding: 0px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: white;
-}
-
-.App-main {
-  flex: 1;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 20px;
-}
-
-.chart-container {
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  border: 0px solid #ddd;
-}
-
-.App-footer {
-  background-color: #282c34;
-  padding: px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
   color: white;
-  text-align: center;
 }
 
- 
-h1 {
-  margin-bottom: 10px;
+.App-link {
+  color: #61dafb;
 }
 
-.LineChart {
-  width: 100%;
-  height: 800px;
-  color: gold;
-  border: 1px solid #ddd;
-}
-
-.light {
-  background-color: white;
-}
-
-.dark {
-  background-color: #282c34;
-}
-
-.button {
-  margin: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-.login-button {
-  margin: 10px;
-  background-color: #28a745;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.login-button:hover {
-  background-color: #1e7e34;
-}
-
-.login-message{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-
-.profile-icon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.profile-icon img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
